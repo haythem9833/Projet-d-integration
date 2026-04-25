@@ -48,19 +48,6 @@ public class UserController {
                 return ResponseEntity.status(HttpStatus.CREATED).body(response);
         }
 
-        // LOGIN
-        @PostMapping("/login")
-        public ResponseEntity<AuthResponse> login(
-                        @Valid @RequestBody LoginRequest request) {
-
-                String token = userService.login(
-                                request.getEmail(),
-                                request.getPassword());
-
-                return ResponseEntity.ok(
-                                new AuthResponse(token, "Login successful"));
-        }
-
         // GET USERS
         @GetMapping("/users")
         public ResponseEntity<List<UserResponse>> getAllUsers() {
