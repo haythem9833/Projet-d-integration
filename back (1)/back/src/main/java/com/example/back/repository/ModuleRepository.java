@@ -1,16 +1,16 @@
 package com.example.back.repository;
 
+import com.example.back.entity.Module;
 import com.example.back.entity.Course;
-import com.example.back.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Repository
-public interface CourseRepository extends JpaRepository<Course, Long> {
+public interface ModuleRepository extends JpaRepository<Module, Long> {
 
-    List<Course> findByTrainer(User trainer);
+    List<Module> findByCourse(Course course);
 
-    List<Course> findByTitleContainingIgnoreCase(String title);
+    List<Module> findByCourseId(Long courseId);
 }
