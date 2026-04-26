@@ -1,9 +1,14 @@
 package com.example.back.entity;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.List;
 
 @Entity
+@Setter
+@Getter
 public class Quiz {
 
     @Id
@@ -12,14 +17,7 @@ public class Quiz {
 
     private String title;
 
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
+     
     @OneToOne
     @JoinColumn(name = "course_id")
     private Course course;

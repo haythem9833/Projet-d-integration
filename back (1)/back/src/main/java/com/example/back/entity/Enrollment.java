@@ -1,9 +1,14 @@
 package com.example.back.entity;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.time.LocalDate;
 
 @Entity
+@Setter
+@Getter
 public class Enrollment {
 
     @Id
@@ -19,19 +24,9 @@ public class Enrollment {
     private Course course;
 
     private LocalDate enrolledAt;
-    public LocalDate getEnrolledAt() {
-        return enrolledAt;
-    }
-    public void setEnrolledAt(LocalDate enrolledAt) {
-        this.enrolledAt = enrolledAt;
-    }
+     
     private Double progress = 0.0;
-    public Double getProgress() {
-        return progress;
-    }
-    public void setProgress(Double progress) {
-        this.progress = progress;
-    }
+    
 
-    // getters setters
+     
 }

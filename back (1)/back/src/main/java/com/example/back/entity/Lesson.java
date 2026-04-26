@@ -1,8 +1,12 @@
 package com.example.back.entity;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
+@Setter
+@Getter
 public class Lesson {
 
     @Id
@@ -10,36 +14,20 @@ public class Lesson {
     private Long id;
 
     private String title;
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
+    
 
     private String videoUrl;
-    public String getVideoUrl() {
-        return videoUrl;
-    }
+    
 
-    public void setVideoUrl(String videoUrl) {
-        this.videoUrl = videoUrl;
-    }
+     
 
     private String content;
 
-    public String getContent() {
-        return content;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
-    }
+    
 
     @ManyToOne
     @JoinColumn(name = "module_id")
     private Module module;
 
-    // getters setters
+     
 }

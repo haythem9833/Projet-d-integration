@@ -1,10 +1,15 @@
 package com.example.back.entity;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.List;
 
 @Entity
 @Table(name = "modules")
+@Setter
+@Getter
 public class Module {
 
     @Id
@@ -13,13 +18,7 @@ public class Module {
 
     private String title;
 
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
+     
 
     @ManyToOne
     @JoinColumn(name = "course_id")
@@ -28,5 +27,5 @@ public class Module {
     @OneToMany(mappedBy = "module", cascade = CascadeType.ALL)
     private List<Lesson> lessons;
 
-    // getters setters
+    
 }

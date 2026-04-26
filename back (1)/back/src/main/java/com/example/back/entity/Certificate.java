@@ -1,8 +1,12 @@
 package com.example.back.entity;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
+@Setter
+@Getter
 public class Certificate {
 
     @Id
@@ -11,14 +15,6 @@ public class Certificate {
 
     private String certificateUrl;
 
-    public String getCertificateUrl() {
-        return certificateUrl;
-    }
-
-    public void setCertificateUrl(String certificateUrl) {
-        this.certificateUrl = certificateUrl;
-    }
-
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
@@ -26,6 +22,4 @@ public class Certificate {
     @ManyToOne
     @JoinColumn(name = "course_id")
     private Course course;
-
-    // getters setters
 }

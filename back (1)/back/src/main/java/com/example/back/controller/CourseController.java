@@ -2,6 +2,7 @@ package com.example.back.controller;
 
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import com.example.back.dto.request.CourseRequest;
@@ -83,8 +84,11 @@ public class CourseController {
         );
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/{id}")
-    public ResponseEntity<String> delete(@PathVariable Long id) {
+    public ResponseEntity<?> deleteCourse(
+            @PathVariable Long id
+    ) {
         courseService.delete(id);
         return ResponseEntity.ok("Course deleted");
     }
