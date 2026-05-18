@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    /* Background - Gris très clair #F9FAFB */
+    --background: 210 20% 98%;
+    /* Text main - Gris foncé #111827 */
+    --foreground: 220 26% 9%;
+    /* Surface - Blanc #FFFFFF */
+    --card: 0 0% 100%;
+    --card-foreground: 220 26% 9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 26% 9%;
+    /* Primary light - Bleu très clair #EFF6FF */
+    --muted: 214 100% 97%;
+    /* Text muted - Gris moyen #6B7280 */
+    --muted-foreground: 220 9% 46%;
+    /* Accent / CTA - Jaune/orange #F59E0B */
+    --accent: 38 92% 50%;
+    --accent-foreground: 0 0% 100%;
+    /* Danger - Rouge #EF4444 */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    /* Primary - Bleu vif #2563EB */
+    --primary: 221 83% 53%;
+    --primary-foreground: 0 0% 100%;
+    /* Secondary - Vert émeraude #059669 */
+    --secondary: 160 84% 30%;
+    --secondary-foreground: 0 0% 100%;
+    /* Ring - Bleu vif */
+    --ring: 221 83% 53%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 220 26% 9%;
+    --foreground: 0 0% 98%;
+    --card: 220 26% 14%;
+    --card-foreground: 0 0% 98%;
+    --popover: 220 26% 14%;
+    --popover-foreground: 0 0% 98%;
+    --muted: 220 13% 20%;
+    --muted-foreground: 220 9% 64%;
+    --accent: 38 92% 50%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 13% 20%;
+    --input: 220 13% 20%;
+    --primary: 221 83% 53%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 160 84% 30%;
+    --secondary-foreground: 0 0% 100%;
+    --ring: 221 83% 53%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-gray-300;
+  }
+  
+  /* Light Mode - Default */
+  html {
+    @apply bg-gray-50 text-gray-900;
+  }
+
+  body {
+    @apply bg-gray-50 text-gray-900;
+  }
+
+  /* Light Mode - Navbar */
+  nav {
+    @apply bg-gradient-to-r from-white via-blue-50 to-white border-b border-blue-200;
+  }
+
+  /* Light Mode - Cards */
+  .bg-gray-800\/50 {
+    @apply bg-white;
+  }
+
+  .border-gray-700 {
+    @apply border-gray-200;
+  }
+
+  .text-white {
+    @apply text-gray-900;
+  }
+
+  .text-gray-400 {
+    @apply text-gray-600;
+  }
+
+  .text-gray-300 {
+    @apply text-gray-700;
+  }
+
+  .bg-gray-900\/50 {
+    @apply bg-blue-50;
+  }
+
+  .bg-gray-700\/50 {
+    @apply bg-blue-100;
+  }
+
+  .placeholder-gray-500 {
+    @apply placeholder-gray-400;
+  }
+}
